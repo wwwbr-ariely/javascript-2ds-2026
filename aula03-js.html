@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 03 - subindo imagem com js</title>
+</head>
+<body>
+    
+    <h1>Escolha uma imagem:</h1>
+    <input type="file" id="arquivo" accept="image/">
+    <br>
+    <br>
+    <img id="preview" src="" alt="A imagem aparecerá aqui">
+
+</body>
+
+    <script>
+        const input = document.getElementById('arquivo');
+        const img = document.getElementById('preview');
+
+        input.onchange = function() {
+            if(this.files[0]){
+                img.src = URL.createObjectURL(this.files[0]);
+            }
+        }
+
+    </script>
+</html>
